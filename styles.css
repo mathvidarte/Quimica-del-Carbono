@@ -1,0 +1,76 @@
+body {
+    width: 1280px;
+    height: 720px;
+}
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%); /* IE 9 */
+    -webkit-transform: translate(-50%, -50%); /* Chrome, Safari, Opera */
+}
+
+button {
+    background: #fb2d5d;
+    color: white;
+    border-color: unset;
+}
+.container .btnPlay1 {
+    position: absolute;
+    left: 61.33%;
+    right: 20.16%;
+    top: 64.31%;
+    bottom: 28.19%;
+    border-radius: 5px;
+    width: 237px;
+    height: 54px;
+}
+
+.container .btnPlay2 {
+    position: absolute;
+    left: 31.09%;
+    right: 31.09%;
+    top: 83.33%;
+    bottom: 9.17%;
+    border-radius: 5px;
+    width: 484px;
+    height: 54px;
+}
+.container .btnPlay3 {
+    position: absolute;
+    width: 484px;
+    height: 54px;
+    left: 405px;
+    top: 596px;
+    border-radius: 5px;
+}
+
+.btnContainer {
+    position: absolute;
+    width: 498px;
+    height: 54px;
+    left: 384px;
+    top: 596px;
+}
+
+.btnSecundary {
+    height: 54px;
+    width: 243px;
+    left: 384px;
+    top: 596px;
+    border-radius: 5px;
+    background-color: white;
+    border: 3px solid #090d46;
+    box-sizing: border-box;
+    border-radius: 5px;
+    color: #090D46;
+}
+
+.btnMain {
+    height: 54px;
+    width: 243px;
+    left: 639px;
+    top: 596px;
+    border-radius: 5px;
+}
