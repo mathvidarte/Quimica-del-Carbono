@@ -1,0 +1,70 @@
+html,
+body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+
+    /* This centers our sketch horizontally. */
+    justify-content: center;
+
+    /* This centers our sketch vertically. */
+    align-items: center;
+}
+
+.btnCombinar {
+    position: absolute;
+    left: 46.36%;
+    right: 43.44%;
+    top: 72.08%;
+    bottom: 20.42%;
+
+    background: #fb2d5d;
+    border-radius: 5px;
+
+    width: 169px;
+    height: 54px;
+    color: white;
+    border: none;
+}
+.btn-{
+    background: url("data/btn-.png");
+    position: absolute;
+    height: 31px;
+    width: 31px;
+    left: 500px;
+    top: 180px;
+    border: none;
+}
+
+.btnM{
+    background: url("data/btn+.png");
+    position: absolute;
+    width: 31px;
+    height: 30px;
+    left: 500px;
+    top: 155px;
+    border: none;
+}
+
+.btn-2 {
+    background: url("data/btn-.png");
+    position: absolute;
+    height: 31px;
+    width: 31px;
+    left: 1100px;
+    top: 180px;
+    border: none;
+}
+
+.btnM2 {
+    background: url("data/btn+.png");
+    position: absolute;
+    width: 31px;
+    height: 30px;
+    left: 1100px;
+    top: 155px;
+    border: none;
+}
+
