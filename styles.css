@@ -15,6 +15,12 @@ button {
     background: #fb2d5d;
     color: white;
     border-color: unset;
+    
+}
+
+button:focus {
+    border: none;
+    outline: none;
 }
 .container .btnPlay1 {
     position: absolute;

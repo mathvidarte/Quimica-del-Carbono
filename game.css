@@ -13,6 +13,13 @@ body {
     align-items: center;
 }
 
+button{
+    
+    text-decoration: none;
+    border: none;
+    outline: 0 !important;
+}
+
 .btnCombinar {
     position: absolute;
     left: 46.36%;
@@ -44,8 +51,26 @@ body {
     width: 31px;
     height: 30px;
     left: 500px;
-    top: 155px;
+    top: 160px;
     border: none;
+}
+
+.btn-:focus{
+    background: url("data/btn-focus.png");
+}
+
+.btnM:focus{
+    background: url("data/btn+focus.png");
+    
+}
+
+.btn-2:focus{
+    background: url("data/btn-focus.png");
+}
+.btnM2:focus{
+
+    background: url("data/btn+focus.png");
+
 }
 
 .btn-2 {
@@ -64,7 +89,7 @@ body {
     width: 31px;
     height: 30px;
     left: 1100px;
-    top: 155px;
+    top: 160px;
     border: none;
 }
 

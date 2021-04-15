@@ -14,6 +14,11 @@ function setup(){
 
     createCanvas(1280,720);
     background(bg);
+    
+}
+
+function draw(){
+
     textFont(myFont);
     textSize(25);
     fill('#4639B9');
