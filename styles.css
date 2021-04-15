@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap');
+
 body {
     width: 1280px;
     height: 720px;
+    background-color: #090D46;
 }
 .container {
     position: absolute;
@@ -15,6 +18,9 @@ button {
     background: #fb2d5d;
     color: white;
     border-color: unset;
+    font-family: 'Jost';
+    font-size: 28px;
+
 }
 .container .btnPlay1 {
     position: absolute;
@@ -29,12 +35,12 @@ button {
 
 .container .btnPlay2 {
     position: absolute;
-    left: 31.09%;
+    left: 39.09%;
     right: 31.09%;
-    top: 83.33%;
+    top: 58.33%;
     bottom: 9.17%;
     border-radius: 5px;
-    width: 484px;
+    width: 284px;
     height: 54px;
 }
 .container .btnPlay3 {
@@ -44,6 +50,26 @@ button {
     left: 405px;
     top: 596px;
     border-radius: 5px;
+}
+
+.container .btnNext2 {
+    position: absolute;
+    width: 284px;
+    height: 54px;
+    left: 440px;
+    top: 575px;
+    border-radius: 5px;
+}
+
+.container .btnNext3 {
+    position: absolute;
+    left: 39.09%;
+    right: 31.09%;
+    top: 69.33%;
+    bottom: 9.17%;
+    border-radius: 5px;
+    width: 284px;
+    height: 54px;
 }
 
 .btnContainer {
@@ -74,4 +100,6 @@ button {
     top: 596px;
     border-radius: 5px;
 }
+
+
 
