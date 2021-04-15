@@ -21,6 +21,12 @@ button {
     font-family: 'Jost';
     font-size: 28px;
 
+    
+}
+
+button:focus {
+    border: none;
+    outline: none;
 }
 .container .btnPlay1 {
     position: absolute;

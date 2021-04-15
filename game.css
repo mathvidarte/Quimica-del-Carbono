@@ -14,6 +14,14 @@ body {
     align-items: center;
 }
 
+
+
+button {
+    text-decoration: none;
+    border: none;
+    outline: 0 !important;
+}
+
 .btnCombinar {
     position: absolute;
     left: 46.36%;
@@ -29,43 +37,62 @@ body {
     color: white;
     border: none;
 }
-.btn-{
+.btn- {
     background: url("data/btn-.png");
-    position: absolute;
     height: 31px;
     width: 31px;
-    left: 500px;
-    top: 180px;
-    border: none;
+    
 }
 
-.btnM{
+.btnM {
     background: url("data/btn+.png");
-    position: absolute;
     width: 31px;
     height: 30px;
-    left: 500px;
-    top: 155px;
-    border: none;
+   
+}
+
+.btn-:focus {
+    background: url("data/btn-focus.png");
+}
+
+.btnM:focus {
+    background: url("data/btn+focus.png");
+}
+
+.btn-2:focus {
+    background: url("data/btn-focus.png");
+}
+.btnM2:focus {
+    background: url("data/btn+focus.png");
 }
 
 .btn-2 {
     background: url("data/btn-.png");
-    position: absolute;
     height: 31px;
     width: 31px;
-    left: 1100px;
-    top: 180px;
-    border: none;
 }
 
 .btnM2 {
     background: url("data/btn+.png");
-    position: absolute;
     width: 31px;
     height: 30px;
-    left: 1100px;
-    top: 155px;
-    border: none;
+}
+
+.btnContainer {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: 56px;
+    left: 440px;
+    top: -224px; 
+}
+
+.btnContainer2 {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: 56px;
+    left: 1010px;
+    top: -224px; 
 }
 
