@@ -5,6 +5,13 @@ let tiempo= 30;
 let compuestos=[];
 let compuesto; //variable que contiene el compuesto random
 let random; // numero random 
+let carbonoGlobal = 0;
+let hidrogenoGlobal = 0;
+const arrowPlusC = document.querySelector('.btnM');
+const arrowMinusC  = document.querySelector('.btn-');
+
+const arrowPlusH = document.querySelector('.btnM2');
+const arrowMinusH  = document.querySelector('.btn-2');
 
 function preload(){
 
@@ -19,7 +26,12 @@ function setup(){
     compuestos.push(new Compuesto("Metano",1,4,"lorem"));
     compuestos.push(new Compuesto("Etano",2,6,"lorem"));
     compuestos.push(new Compuesto("Butano",4,10,"lorem"));
-    compuestos.push(new Compuesto("Butano",5,12,"lorem"));
+    compuestos.push(new Compuesto("Pentano",5,12,"lorem"));
+    compuestos.push(new Compuesto("Metilo",5,12,"lorem"));
+    compuestos.push(new Compuesto("Etilo",5,12,"lorem"));
+    compuestos.push(new Compuesto("Propilo",5,12,"lorem"));
+    compuestos.push(new Compuesto("Butilo",5,12,"lorem"));
+    compuestos.push(new Compuesto("Pentilo",5,12,"lorem"));
    
     seleccionarCompuesto();
 }
@@ -37,6 +49,12 @@ function draw(){
     fill("#FB2D5D");
     //pinta nombre del compuesto random
     text(compuesto.nombre,551,260);
+    //pinta el numero del carbono
+    text(carbonoGlobal,510,420);
+    fill("#FB2D5D");
+    //pinta el numero del hidrogeno
+    text(hidrogenoGlobal,750,420);
+    fill("#FB2D5D");
 
     if (frameCount % 60 == 0 && tiempo > 0) {
 
@@ -52,3 +70,43 @@ function seleccionarCompuesto(){
     
 }
 
+
+//para aumentar el carbono
+arrowPlusC.addEventListener('click',() => {
+    if (carbonoGlobal < 10) {
+        carbonoGlobal ++ ;
+        }
+   
+   
+
+});
+//para disminuir el carbono
+arrowMinusC.addEventListener('click',()=> {
+
+
+    if (carbonoGlobal > 0) {
+         carbonoGlobal -- ;
+         }
+});
+
+
+
+//para aumentar el HIDROGENO
+arrowPlusH.addEventListener('click',() => {
+
+    if (hidrogenoGlobal <30) {
+        hidrogenoGlobal ++ ;
+        }
+   
+   
+
+});
+//para disminuir el HIDROGENO
+arrowMinusH.addEventListener('click',()=> {
+   
+  
+   if (hidrogenoGlobal > 0) {
+    hidrogenoGlobal -- ;
+    }
+ 
+});
