@@ -41,7 +41,6 @@ function setup(){
     compuestos.push(new Compuesto("Propilo",5,12,"lorem"));
     compuestos.push(new Compuesto("Butilo",5,12,"lorem"));
     compuestos.push(new Compuesto("Pentilo",5,12,"lorem"));
-   
     seleccionarCompuesto();
 }
 
@@ -60,8 +59,15 @@ function draw(){
     fill("#FB2D5D");
     
     //pinta nombre del compuesto random
-    nombre = compuesto.nombre;
-    text(nombre,551,260);
+
+    try {
+        
+        nombre = compuesto.nombre;
+        text(nombre,551,260);
+    } catch (error) {
+        
+    }
+  
     //pinta el numero del carbono
     text(carbonoGlobal,510,420);
     fill("#FB2D5D");
@@ -94,9 +100,16 @@ function draw(){
 
 //random compuesto
 function seleccionarCompuesto(){
+
+    if(compuestos.length==0){
+
+        alert("se acabo el juego")
+    }
     random = Math.floor(Math.random() * compuestos.length);
     compuesto = compuestos[random];
+    compuestos.splice(random,1);
 
+    console.log(compuestos);
     mix = 0;
 }
 
