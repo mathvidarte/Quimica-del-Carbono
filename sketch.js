@@ -9,6 +9,7 @@ let random; // numero random
 let carbonoGlobal = 0;
 let hidrogenoGlobal = 0;
 let ceros = false;
+let mix = 0;
 
 const arrowPlusC = document.querySelector('.btnM');
 const arrowMinusC  = document.querySelector('.btn-');
@@ -72,22 +73,33 @@ function draw(){
     if (ceros == true){
         fill('#4639B9');
         text("texto que diga algo de que carbono y hidrogeno no pueden estar en ceros", 50,20);
-
     }
+
+    if(mix == 1){
+        fill('#4639B9');
+        text("ALGO DE RESPUESTA CORRECTA", 50,20);
+    }
+
+    if(mix == 2){
+        fill('#4639B9');
+        text("ALGO DE RESPUESTA INCORRECTA", 50,20);
+    }
+
 }
 
+//random compuesto
 function seleccionarCompuesto(){
-
     random=Math.floor(Math.random() * compuestos.length);
     compuesto=compuestos[random];
-    
-}
 
+    mix = 0;
+}
 
 //para aumentar el carbono
 arrowPlusC.addEventListener('click',() => {
     if (carbonoGlobal < 10) {
         carbonoGlobal ++ ;
+        ceros = false;
         }
 });
 
@@ -100,8 +112,9 @@ arrowMinusC.addEventListener('click',()=> {
 
 //para aumentar el HIDROGENO
 arrowPlusH.addEventListener('click',() => {
-    if (hidrogenoGlobal <30) {
+    if (hidrogenoGlobal < 30) {
         hidrogenoGlobal ++ ;
+        ceros = false;
         } 
 });
 
@@ -118,6 +131,8 @@ mixButton.addEventListener('click', ()=> {
         ceros = true;
 
     }else{
+        ceros = false;
+
         console.log("carbono:"+carbonoGlobal+"hidrogeno:"+hidrogenoGlobal);
         if(compuesto.carbon == carbonoGlobal && compuesto.hidrogeno == hidrogenoGlobal){
             console.log("SUPER");
@@ -128,7 +143,10 @@ mixButton.addEventListener('click', ()=> {
             //vuelve a 0 la combinacion de carbono e hidrogeno
             carbonoGlobal = 0;
             hidrogenoGlobal = 0;
+
+            mix = 1;
     
+            
             seleccionarCompuesto();
     
         }else{
@@ -137,7 +155,9 @@ mixButton.addEventListener('click', ()=> {
             //vuelve a 0 la combinacion de carbono e hidrogeno
             carbonoGlobal = 0;
             hidrogenoGlobal = 0;
-    
+
+            mix = 2;
+
             seleccionarCompuesto();
         }
     }
