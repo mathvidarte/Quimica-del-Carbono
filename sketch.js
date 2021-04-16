@@ -1,5 +1,7 @@
 let bg;
 let myFont;
+let nombre;
+
 let tiempo= 60;
 let puntuacion = 0;
 let puntos = "Puntaje:  ";
@@ -58,7 +60,8 @@ function draw(){
     fill("#FB2D5D");
     
     //pinta nombre del compuesto random
-    text(compuesto.nombre,551,260);
+    nombre = compuesto.nombre;
+    text(nombre,551,260);
     //pinta el numero del carbono
     text(carbonoGlobal,510,420);
     fill("#FB2D5D");
@@ -66,6 +69,7 @@ function draw(){
     text(hidrogenoGlobal,750,420);
     fill("#FB2D5D");
 
+    //tiempo
     if (frameCount % 60 == 0 && tiempo > 0) {
         tiempo --;       
     }
@@ -85,12 +89,13 @@ function draw(){
         text("ALGO DE RESPUESTA INCORRECTA", 50,20);
     }
 
+    
 }
 
 //random compuesto
 function seleccionarCompuesto(){
-    random=Math.floor(Math.random() * compuestos.length);
-    compuesto=compuestos[random];
+    random = Math.floor(Math.random() * compuestos.length);
+    compuesto = compuestos[random];
 
     mix = 0;
 }
@@ -133,9 +138,8 @@ mixButton.addEventListener('click', ()=> {
     }else{
         ceros = false;
 
-        console.log("carbono:"+carbonoGlobal+"hidrogeno:"+hidrogenoGlobal);
         if(compuesto.carbon == carbonoGlobal && compuesto.hidrogeno == hidrogenoGlobal){
-            console.log("SUPER");
+            //console.log("SUPER");
     
             //suma 10 puntos
             puntuacion += 10;
@@ -148,9 +152,10 @@ mixButton.addEventListener('click', ()=> {
     
             
             seleccionarCompuesto();
+            compuestos.remove(compuesto);
     
         }else{
-            console.log("BAD");
+            //console.log("BAD");
     
             //vuelve a 0 la combinacion de carbono e hidrogeno
             carbonoGlobal = 0;
@@ -159,6 +164,7 @@ mixButton.addEventListener('click', ()=> {
             mix = 2;
 
             seleccionarCompuesto();
+
         }
     }
 });
