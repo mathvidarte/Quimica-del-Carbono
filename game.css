@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap');
+
 html,
 body {
     height: 100%;
@@ -24,7 +26,7 @@ button {
 
 .btnCombinar {
     position: absolute;
-    left: 46.36%;
+    left: 47.36%;
     right: 43.44%;
     top: 72.08%;
     bottom: 20.42%;
@@ -36,6 +38,9 @@ button {
     height: 54px;
     color: white;
     border: none;
+
+    font-family: 'Jost';
+    font-size: 28px;
 }
 .btn- {
     background: url("data/btn-.png");
@@ -78,12 +83,13 @@ button {
     height: 30px;
 }
 
+
 .btnContainer {
     display: flex;
     flex-direction: column;
     position: relative;
     height: 56px;
-    left: 440px;
+    left: 460px;
     top: -224px; 
 }
 
@@ -92,7 +98,27 @@ button {
     flex-direction: column;
     position: relative;
     height: 56px;
-    left: 1010px;
+    left: 1035px;
     top: -224px; 
 }
+
+.btnpista{
+    background: url("data/pista.png");
+    background-size: cover;
+    position: relative;
+    width: 50px;
+    height: 50px;
+}
+.pistacontainer{
+    display: flex;
+    position: relative;
+    height: auto;
+    left: 1160px;
+    top: 240px;
+    width: 32px;
+    
+}
+
+
+
 
