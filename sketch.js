@@ -32,15 +32,16 @@ function setup(){
 
     createCanvas(1280,720);
     background(bg);
-    compuestos.push(new Compuesto("Metano",1,4,"lorem"));
-    compuestos.push(new Compuesto("Etano",2,6,"lorem"));
-    compuestos.push(new Compuesto("Butano",4,10,"lorem"));
-    compuestos.push(new Compuesto("Pentano",5,12,"lorem"));
-    compuestos.push(new Compuesto("Metilo",5,12,"lorem"));
-    compuestos.push(new Compuesto("Etilo",5,12,"lorem"));
-    compuestos.push(new Compuesto("Propilo",5,12,"lorem"));
-    compuestos.push(new Compuesto("Butilo",5,12,"lorem"));
-    compuestos.push(new Compuesto("Pentilo",5,12,"lorem"));
+    compuestos.push(new Compuesto("Metano",1,4,"Es el primer hidrocarburo y es el más sencillo"));
+    compuestos.push(new Compuesto("Etano",2,6,"Recuerda que los carbonos aumentan de a 1 y los hidrógenos aumentan de a 2. ¿Qué hidrocarburo es este?"));
+    compuestos.push(new Compuesto("Propano",3,8,"Si este es el tercer hidrocarburo, ¿cúantos hidrógenos tiene?"))
+    compuestos.push(new Compuesto("Butano",4,10,"Su prefijo es But, ¿a cuantos carbonos hace referencia?"));
+    compuestos.push(new Compuesto("Pentano",5,12,"Si un pentagono tiene 5 puntas, entonces ¿el pentano cuántos carbonos?"));
+    compuestos.push(new Compuesto("Metilo",1,3,"Si es el primer alquilo, ¿cuántos hidrógenos se le quitaría?"));
+    compuestos.push(new Compuesto("Etilo",2,5,"Los hidrógenos en los alcanos son números pares y en los alquilos número impares"));
+    compuestos.push(new Compuesto("Propilo",3,7,"Para crear un alquilo, piensa en la composición del alcano y restale un hidrógeno"));
+    compuestos.push(new Compuesto("Butilo",4,9,"Su prefijo But significa la cantidad de carbonos. Ahora piensa en los hidrógenos"));
+    compuestos.push(new Compuesto("Pentilo",5,11,"Sus hidrógenos son un número impar"));
     seleccionarCompuesto();
 }
 
