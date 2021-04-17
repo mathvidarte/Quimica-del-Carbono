@@ -56,7 +56,8 @@ function draw(){
     fill('#F1F1F1');
     text(tiempo,550,90);
     fill('#4639B9');
-    text("Construye un",551,230)
+    textAlign(CENTER);
+    text("Construye un",1280/2,230)
     fill("#FB2D5D");
     
     //pinta nombre del compuesto random
@@ -64,11 +65,11 @@ function draw(){
     try {
         
         nombre = compuesto.nombre;
-        text(nombre,551,260);
+        text(nombre,1280/2,260);
     } catch (error) {
         
     }
-  
+    textAlign(LEFT);
     //pinta el numero del carbono
     text(carbonoGlobal,510,420);
     fill("#FB2D5D");
