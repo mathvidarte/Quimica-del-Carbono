@@ -19,12 +19,14 @@ let ceros = false;
 let mix = 0;
 let pantalla = 0;
 let cont;
+let bpista = false;
 const arrowPlusC = document.querySelector('.btnM');
 const arrowMinusC = document.querySelector('.btn-');
 const arrowPlusH = document.querySelector('.btnM2');
 const arrowMinusH = document.querySelector('.btn-2');
 const mixButton = document.querySelector('.btnCombinar');
 const btnpista = document.querySelector('.btnpista');
+const pistadesign = document.querySelector('pistadesign');
 
 function preload() {
 
@@ -40,16 +42,16 @@ function setup() {
 
     createCanvas(1280, 720); 
     background(bg);
-    compuestos.push(new Compuesto("Metano",1,4,"Es el primer hidrocarburo y es el más sencillo"));
-    compuestos.push(new Compuesto("Etano",2,6,"Recuerda que los carbonos aumentan de a 1 y los hidrógenos aumentan de a 2. ¿Qué hidrocarburo es este?"));
-    compuestos.push(new Compuesto("Propano",3,8,"Si este es el tercer hidrocarburo, ¿cúantos hidrógenos tiene?"))
-    compuestos.push(new Compuesto("Butano",4,10,"Su prefijo es But, ¿a cuantos carbonos hace referencia?"));
-    compuestos.push(new Compuesto("Pentano",5,12,"Si un pentagono tiene 5 puntas, entonces ¿el pentano cuántos carbonos?"));
-    compuestos.push(new Compuesto("Metilo",1,3,"Si es el primer alquilo, ¿cuántos hidrógenos se le quitaría?"));
-    compuestos.push(new Compuesto("Etilo",2,5,"Los hidrógenos en los alcanos son números pares y en los alquilos número impares"));
-    compuestos.push(new Compuesto("Propilo",3,7,"Para crear un alquilo, piensa en la composición del alcano y restale un hidrógeno"));
-    compuestos.push(new Compuesto("Butilo",4,9,"Su prefijo But significa la cantidad de carbonos. Ahora piensa en los hidrógenos"));
-    compuestos.push(new Compuesto("Pentilo",5,11,"Sus hidrógenos son un número impar"));
+    compuestos.push(new Compuesto("Metano",1,4,"Es el primer hidrocarburo\n y es el más sencillo."));
+    compuestos.push(new Compuesto("Etano",2,6,"Recuerda que los carbonos \n aumentan de a 1 y los\n hidrógenos aumentan de a 2.\n ¿Qué hidrocarburo es este?"));
+    compuestos.push(new Compuesto("Propano",3,8,"Si este es el tercer hidrocarburo,\n ¿cúantos hidrógenos tiene?"))
+    compuestos.push(new Compuesto("Butano",4,10,"Su prefijo es But,\n¿a cuantos carbonos hace referencia?"));
+    compuestos.push(new Compuesto("Pentano",5,12,"Si un pentagono tiene 5 puntas,\n entonces ¿el pentano cuántos carbonos?"));
+    compuestos.push(new Compuesto("Metilo",1,3,"Si es el primer alquilo,\n ¿cuántos hidrógenos se le quitaría?"));
+    compuestos.push(new Compuesto("Etilo",2,5,"Los hidrógenos en los alcanos\nson números pares y en los\n alquilos número impares."));
+    compuestos.push(new Compuesto("Propilo",3,7,"Para crear un alquilo,\n piensa en la composición del alcano\n y restale un hidrógeno."));
+    compuestos.push(new Compuesto("Butilo",4,9,"Su prefijo But significa la cantidad\n de carbonos. Ahora piensa en\n los hidrógenos."));
+    compuestos.push(new Compuesto("Pentilo",5,11,"Sus hidrógenos son\n un número impar"));
     seleccionarCompuesto();
 }
 
@@ -64,6 +66,7 @@ function draw() {
             background(bg);
             textFont(myFont);
             textSize(25);
+            textAlign(CORNER);
             fill('#4639B9');
             text(puntos, 637, 90);
             text(puntuacion, 735, 90);
@@ -106,6 +109,7 @@ function draw() {
                 fill('#DAD5F4')
                 image(correct, 580, 335);
                 //console.log("correcto");
+                rectMode(CORNER);
                 rect (550, 210, 180, 50)
                 noStroke();
                 fill('#52C21C');
@@ -119,10 +123,31 @@ function draw() {
                 image(incorrect, 580,335);
                 //incorrectos++;
                 noStroke();
+                rectMode(CORNER);
                 rect (550, 210, 180, 50)
                 fill('#FB2D5D');
                 text("INCORRECTO", 560, 250);
             }
+
+            if (bpista == true) {
+                fill('#fffff'); 
+                rectMode(CENTER);
+                noStroke();
+                rect(640, 300, 400, 150, 10);
+                fill('#FB2D5D');
+               textAlign(CENTER);
+                textSize (20);
+                text(compuesto.pista, 640, 270);
+                
+               
+              
+                
+                
+
+            }else{
+                bpista == false;
+            }
+
 
         
 
@@ -256,5 +281,19 @@ mixButton.addEventListener('click', () => {
 });
 
 btnpista.addEventListener('click', () => {
-    alert(compuesto.pista);
+    //alert(compuesto.pista);
+    //bpista = true;
+
+    if (bpista ==false) { 
+        bpista = true;
+
+    }else{
+        bpista = false;
+    }
+
+
+    
+
+  
 });
+
