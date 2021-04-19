@@ -118,6 +118,15 @@ button {
     width: 32px;
     
 }
+.pistadesign{
+    display: flex;
+    position: relative;
+    height: 250px;
+    width: 250;
+    background-color: aliceblue;
+
+
+}
 
 
 
