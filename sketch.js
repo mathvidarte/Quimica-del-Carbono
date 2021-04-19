@@ -7,7 +7,7 @@ let incorrectos=0;
 let myFont;
 let nombre;
 let minutos = 3;
-let tiempo = 60;
+let tiempo = 180;
 let puntuacion = 0;
 let puntos = "Puntaje:  ";
 let compuestos = [];
