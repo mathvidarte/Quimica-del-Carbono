@@ -85,12 +85,16 @@ function draw() {
         
             //pinta nombre del compuesto random
         
-            try {
-        
+            try {        
                 nombre = compuesto.nombre;
                 text(nombre, 1280/2, 260);
             } catch (error) {
         
+            }
+
+            if(tiempo<=0){
+
+                pantalla=1;
             }
             textAlign(LEFT);
             //pinta el numero del carbono
