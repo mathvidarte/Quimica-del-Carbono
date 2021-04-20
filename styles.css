@@ -28,6 +28,8 @@ button:focus {
     border: none;
     outline: none;
 }
+
+
 .container .btnPlay1 {
     position: absolute;
     left: 61.33%;

@@ -2,12 +2,13 @@ let bg;
 let winImg;
 let correct;
 let incorrect;
+//let btnClose;
 let correctos=0;
 let incorrectos=0;
 let myFont;
 let nombre;
 let minutos = 3;
-let tiempo = 180;
+let tiempo = 10;
 let puntuacion = 0;
 let puntos = "Puntaje:  ";
 let compuestos = [];
@@ -27,6 +28,8 @@ const arrowMinusH = document.querySelector('.btn-2');
 const mixButton = document.querySelector('.btnCombinar');
 const btnpista = document.querySelector('.btnpista');
 const pistadesign = document.querySelector('pistadesign');
+const btnCloseReal = document.querySelector('.btnClose');
+const btnContinuar = document.querySelector('.btnContinuar');
 
 function preload() {
 
@@ -35,6 +38,7 @@ function preload() {
     bg = loadImage("./data/PantalladeJuego.jpg");
     winImg = loadImage("./data/pantallaFinal.png");
     myFont = loadFont('data/Jost-Bold.ttf');
+    //btnClose = loadImage('./data/btnClose.png');
 
 }
 
@@ -43,16 +47,18 @@ function setup() {
     createCanvas(1280, 720); 
     background(bg);
     compuestos.push(new Compuesto("Metano",1,4,"Es el primer hidrocarburo\n y es el más sencillo."));
-    compuestos.push(new Compuesto("Etano",2,6,"Recuerda que los carbonos \n aumentan de a 1 y los\n hidrógenos aumentan de a 2.\n ¿Qué hidrocarburo es este?"));
+    compuestos.push(new Compuesto("Etano",2,6,"Es el segundo alcano. Recuerda que \nlos carbonos aumentan de a 1 y los\n hidrógenos aumentan de a 2."));
     compuestos.push(new Compuesto("Propano",3,8,"Si este es el tercer hidrocarburo,\n ¿cúantos hidrógenos tiene?"))
-    compuestos.push(new Compuesto("Butano",4,10,"Su prefijo es But,\n¿a cuantos carbonos hace referencia?"));
-    compuestos.push(new Compuesto("Pentano",5,12,"Si un pentagono tiene 5 puntas,\n entonces ¿el pentano cuántos carbonos?"));
+    compuestos.push(new Compuesto("Butano",4,10,"Si es el cuarto alcano,\n ¿cúantos hidrógenos tiene? "));
+    compuestos.push(new Compuesto("Pentano",5,12,"Si un pentágono tiene 5 puntas,\n entonces ¿el pentano cuántos carbonos?"));
     compuestos.push(new Compuesto("Metilo",1,3,"Si es el primer alquilo,\n ¿cuántos hidrógenos se le quitaría?"));
-    compuestos.push(new Compuesto("Etilo",2,5,"Los hidrógenos en los alcanos\nson números pares y en los\n alquilos número impares."));
-    compuestos.push(new Compuesto("Propilo",3,7,"Para crear un alquilo,\n piensa en la composición del alcano\n y restale un hidrógeno."));
-    compuestos.push(new Compuesto("Butilo",4,9,"Su prefijo But significa la cantidad\n de carbonos. Ahora piensa en\n los hidrógenos."));
-    compuestos.push(new Compuesto("Pentilo",5,11,"Sus hidrógenos son\n un número impar"));
+    compuestos.push(new Compuesto("Etilo",2,5,"El prefijo Et es para dos carbonos \npero recuerda que al alquilo \nse le quita un hidrógeno."));
+    compuestos.push(new Compuesto("Propilo",3,7,"Es el tercero y para crear un alquilo,\n piensa en la composición del alcano\n y restale un hidrógeno."));
+    compuestos.push(new Compuesto("Butilo",4,9,"Su prefijo es el cuarto \n y la cantidad de hidrógenos \nes un número impar"));
+    compuestos.push(new Compuesto("Pentilo",5,11,"Si un pentágono tiene 5 puntas,\n entonces ¿el pentano cuántos carbonos?"));
     seleccionarCompuesto();
+
+    
 }
 
 function draw() {
@@ -97,6 +103,12 @@ function draw() {
             //tiempo
             if (frameCount % 60 == 0 && tiempo > 0) {
                 tiempo--;
+
+                if (tiempo <= 0) {
+                    pantalla = 1;
+                    btnpista.classList.add('remove');
+                    btnContinuar.classList.add('btnCon')
+                }
             }
         
             if (ceros == true) {
@@ -110,7 +122,7 @@ function draw() {
                 image(correct, 580, 335);
                 //console.log("correcto");
                 rectMode(CORNER);
-                rect (550, 210, 180, 50)
+                rect (550, 210, 180, 60)
                 noStroke();
                 fill('#52C21C');
                 text("CORRECTO", 560, 250);
@@ -124,21 +136,22 @@ function draw() {
                 //incorrectos++;
                 noStroke();
                 rectMode(CORNER);
-                rect (550, 210, 180, 50)
+                rect (550, 210, 180, 60)
                 fill('#FB2D5D');
                 text("INCORRECTO", 560, 250);
             }
 
             if (bpista == true) {
+                
                 fill('#fffff'); 
                 rectMode(CENTER);
                 noStroke();
                 rect(640, 300, 400, 150, 10);
                 fill('#FB2D5D');
-               textAlign(CENTER);
+                textAlign(CENTER);
                 textSize (20);
-                text(compuesto.pista, 640, 270);
-                
+                text(compuesto.pista, 640, 280);
+                //image(btnClose, 810,200)
                
               
                 
@@ -190,7 +203,10 @@ function seleccionarCompuesto() {
     // verifica que todavia existan compuestos
     if (compuestos.length == 0) {
 
-        pantalla=1;   
+        pantalla=1;  
+        btnpista.classList.add('remove'); 
+        btnContinuar.classList.add('btnCon')
+
     }
     random = Math.floor(Math.random() * compuestos.length);
     compuesto = compuestos[random];
@@ -255,7 +271,7 @@ mixButton.addEventListener('click', () => {
             setTimeout(function(){
                 seleccionarCompuesto();
                 
-        },5000); //delay is in milliseconds 
+        },2000); //delay is in milliseconds 
            
 
         } else {
@@ -270,7 +286,7 @@ mixButton.addEventListener('click', () => {
             setTimeout(function(){
                     seleccionarCompuesto();
                     
-            },5000); //delay is in milliseconds 
+            },2000); //delay is in milliseconds 
 
            
           
@@ -284,16 +300,21 @@ btnpista.addEventListener('click', () => {
     //alert(compuesto.pista);
     //bpista = true;
 
+    
+
     if (bpista ==false) { 
         bpista = true;
+        btnCloseReal.classList.add('--view');
 
     }else{
         bpista = false;
+        
     }
-
-
-    
-
   
 });
+
+btnCloseReal.addEventListener('click', () => {
+    bpista = false;
+    btnCloseReal.classList.remove('--view');
+})
 
